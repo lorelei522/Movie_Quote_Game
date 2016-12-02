@@ -1,0 +1,19 @@
+<div class ="container">
+  <h3>Welcome Back Log In!</h3>
+
+  <%if @errors %>
+    <%@errors.each do |error|%>
+    <ul>
+      <li><%= error %></li>
+    </ul>
+    <%end%>
+  <%end%>
+
+  <img src="http://i.imgur.com/65goE8v.gif">
+
+  <form action="/sessions" method="post">
+    <input name="email" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="Log In">
+  </form>
+</div>

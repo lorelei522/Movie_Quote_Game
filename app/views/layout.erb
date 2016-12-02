@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -18,6 +18,34 @@
   <title></title>
 </head>
 <body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Movie Quote Game</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <%if logged_in?%>
+          <li id="nav-game"><a href="/games/new">Start A New Game</a></li>
+        <%end%>
+      </ul>
+    <%if logged_in?%>
+      <ul class="nav navbar-nav navbar-right">
+        <li id="user"><a href="/users/<%=current_user.id%>"><%=current_user.username%></a> </li>
+        <li><a><form action="/sessions" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input class="btn btn-link" type="submit" value="Log out">
+        </form></a></li>
+
+      </ul>
+    <%else%>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/users/new"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+        <li><a href="/sessions/new"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+      </ul>
+    <%end%>
+    </div>
+  </nav>
   <%= yield %>
 </body>
 </html>
