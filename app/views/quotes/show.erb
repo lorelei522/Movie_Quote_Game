@@ -1,0 +1,12 @@
+<h3><%= @deck.name %></h3>
+
+<p><%= @quote.text %></p>
+
+<form action='/guesses' method='post'>
+  <input type='text' placeholder='Name that Movie!' name='user_answer' />
+  <input type='hidden' name='round_id' value="<%= @round.id %>"/>
+  <input type='hidden' name='deck_id' value="<%= @deck.id %>"/>
+  <input type='hidden' name='quote_id' value="<%= @quote.id %>"/>
+  <input type='submit' value="Make your Guess!" />
+
+</form>
