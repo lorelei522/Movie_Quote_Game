@@ -3,6 +3,7 @@ class CreateQuotes < ActiveRecord::Migration
     create_table :quotes do |t|
       t.string :text, null: false
       t.references :movie, null: false
+      t.references :deck, null: false
 
       t.timestamps(null: false)
     end

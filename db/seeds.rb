@@ -12,6 +12,10 @@ jurassic_park_quotes = Nokogiri.parse(jurrasic_imdb_quote_page)
 jurassic_park_quotes = jurassic_park_quotes.css('.sodatext')
 jurassic_park_quotes = jurassic_park_quotes.map(&:inner_text)
 
+#added a deck id and initial user
+user =  User.create(username: 'lori', password: 'yuca88', email: 'lori@gmail.com')
+deck = Deck.create(name: 'Movie Deck 1')
+
 jurassic_park_quotes.each do |quote|
-  Quote.create(text: quote.strip, movie_id: 1)
+  Quote.create(text: quote.strip, movie_id: 1, deck_id: 1)
 end
