@@ -1,0 +1,6 @@
+<%= @deck.name %>
+
+<form action='/rounds' method='post'>
+  <input type='hidden' name="deck_id" value="<%= @deck.id%>" />
+  <input type='submit' value="Start Game" />
+</form>

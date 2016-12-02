@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-# need to put my associations for the game 
+  has_many :rounds
+  has_many :decks, foreign_key: :author_id
+  has_many :guesses, through: :rounds
 
   validates_presence_of :username, :email
   validates_uniqueness_of :username, :email

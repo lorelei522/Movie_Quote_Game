@@ -10,6 +10,7 @@
   <!--
     application.css is where you put your styles
   -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"> -->
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -26,7 +27,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home</a></li>
         <%if logged_in?%>
-          <li id="nav-game"><a href="/games/new">Start A New Game</a></li>
+          <li id="nav-game"><a href="/decks/show">Start A New Game</a></li>
         <%end%>
       </ul>
     <%if logged_in?%>

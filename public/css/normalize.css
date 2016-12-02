@@ -17,7 +17,15 @@ html {
  */
 
 body {
+  background-image: url("http://wallpapercave.com/wp/NdBYC1g.jpg");
   margin: 0;
+  color: red
+}
+
+#quote{
+  margin: auto;
+  width: 500px;
+  margin-top: 200px
 }
 
 /* HTML5 display definitions
